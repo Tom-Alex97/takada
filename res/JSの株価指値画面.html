@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>JSの株価指値画面</title>
+    <script>
+        function updatePrice(stock, amount) {
+            var priceElement = document.getElementById(stock + '-price');
+            var currentPrice = parseInt(priceElement.textContent);
+            priceElement.textContent = currentPrice + amount;
+        }
+    </script>
+</head>
+<body>
+    <h1>JSの株価指値画面</h1>
+    <table border="1">
+        <tr>
+            <th>株名</th>
+            <th>始値</th>
+            <th>時価</th>
+            <th>時価アップ</th>
+            <th>時価ダウン</th>
+        </tr>
+        <tr>
+            <td>トヨタ</td>
+            <td>1000</td>
+            <td id="丰田-price">900</td>
+            <td><button onclick="updatePrice('丰田', 100)">+100</button></td>
+            <td><button onclick="updatePrice('丰田', -100)">-100</button></td>
+        </tr>
+        <tr>
+            <td>みずほ銀行</td>
+            <td>2000</td>
+            <td id="瑞穗银行-price">2000</td>
+            <td><button onclick="updatePrice('瑞穗银行', 100)">+100</button></td>
+            <td><button onclick="updatePrice('瑞穗银行', -100)">-100</button></td>
+        </tr>
+        <tr>
+            <td>三菱UFJ</td>
+            <td>3000</td>
+            <td id="三菱UFJ-price">3100</td>
+            <td><button onclick="updatePrice('三菱UFJ', 100)">+100</button></td>
+            <td><button onclick="updatePrice('三菱UFJ', -100)">-100</button></td>
+        </tr>
+    </table>
+</body>
+</html>
